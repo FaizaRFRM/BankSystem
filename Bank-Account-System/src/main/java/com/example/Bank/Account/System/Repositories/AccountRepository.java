@@ -34,7 +34,14 @@ public interface AccountRepository extends CrudRepository<Account,Integer> {
     @Query(value ="update Account s set s.IsActive=false where s.updatedDate = :date")
     <List>Account DeleteAccountsByUpdatedDate(@Param("date") Date date);
 
+
+
     //***************************
+
+
+    @Query("INSERT INTO Account a (id, accountNo, balance) VALUES (:id, :accountNo, :balance)")
+    Integer createNewAccount(Integer id, Integer accountNo, double balance);
+
     @Query(value = "SELECT b from Account b where b.id=:AccountId")
     Account getBalanceById(@Param("AccountId") Integer AccountId);
 
@@ -70,8 +77,6 @@ public interface AccountRepository extends CrudRepository<Account,Integer> {
 //    ******************************************************************
 
 
-//    @Query("INSERT INTO Account a (id, accountNo, balance) VALUES (:id, :accountNo, :balance)")
-//    Integer createNewAccount(Integer id, Integer accountNo, double balance);
 
 
 }

@@ -72,7 +72,20 @@ public class AccountControllers {
         return account;
 
     }
+
+
+
+
 //************************************************************
+
+
+
+
+@RequestMapping(value = "createNewAccount", method = RequestMethod.POST)
+public String createNewAccount() {
+    accountService.createNewAccount();
+    return "School add successful";
+}
 @RequestMapping(value = "getBalanceById", method = RequestMethod.GET)
 public Account getBalanceById(@RequestParam Integer id) {
     Account account = accountService.getBalanceById(id);
@@ -116,11 +129,7 @@ public Account getBalanceById(@RequestParam Integer id) {
 //    }
 
 //
-//    @RequestMapping(value = "createNewAccount", method = RequestMethod.POST)
-//    public String createNewAccount() {
-//        accountService.createNewAccount();
-//        return "School add successful";
-//    }
+
 
 //    @RequestMapping(value = "updateSchool")
 //    public void updateSchool(@RequestBody MarketRequestForCreateDateUpdate data)throws ParseException {

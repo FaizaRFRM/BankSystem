@@ -80,7 +80,18 @@ public class AccountService {
         return accountRepository.DeleteAccountsByUpdatedDate(UpdateDate);
 
     }
-//    ***********************************
+
+
+
+//    ************************************
+
+
+
+public void createNewAccount() {
+    Account account = new Account();
+    account.setBalance(2143235);
+    accountRepository.save(account);
+}
 public Account getBalanceById(Integer id) {
     Account account = accountRepository.getBalanceById(id);
     return account;
@@ -123,11 +134,7 @@ public Account getBalanceById(Integer id) {
 //
 
 //
-//    public void createNewAccount() {
-//        Account account = new Account();
-//        account.setBalance(2143235);
-//        accountRepository.save(account);
-//    }
+
 
 
 //    public void updateSchool(String date, Integer id) throws ParseException {
